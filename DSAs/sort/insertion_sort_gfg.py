@@ -1,13 +1,3 @@
-# test_list = [8, 3, 5, 4, 2]
-#
-#
-# def insertionSort(s_list):
-#     for i in range(len(s_list)):
-#         next = i + 1 if i < len(s_list)-1 else i
-#         #print(next)
-#         s_list[i], s_list[next] = s_list[next], s_list[i]
-
-
 # Python program for implementation of Insertion Sort
 
 # Function to do insertion sort
