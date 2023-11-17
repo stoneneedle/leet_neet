@@ -1,6 +1,8 @@
+nums = [5, 4, 3, 2, 1]
+
 def bucketSort(arr):
     # Assuming arr only contains 0, 1 or 2
-    counts = [0, 0, 0]
+    counts = [0, 0, 0, 0, 0, 0]
 
     # Count the quantity of each val in arr
     for n in arr:
@@ -13,3 +15,6 @@ def bucketSort(arr):
             arr[i] = n
             i += 1
     return arr
+
+bucketSort(nums)
+print(nums)
