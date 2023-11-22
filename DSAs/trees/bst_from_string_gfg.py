@@ -21,6 +21,7 @@ def preOrder(node):
     preOrder(node.right)
 
 
+
 # function to return the index of
 # close parenthesis
 
