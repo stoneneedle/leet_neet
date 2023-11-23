@@ -6,6 +6,6 @@ class TreeNode:
 
     def __str__(self):
         return str(self.val) + ' ' + str(self.left if self.left else '') + str(self.right if self.right else '')
-[]
+
 t = TreeNode(1)
 print(t.val)
