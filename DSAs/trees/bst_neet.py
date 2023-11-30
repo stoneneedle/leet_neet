@@ -112,8 +112,11 @@ def bfs(root):
 
 
 
-bst = TreeNode(4)
-insert(bst, 2)
-# , left=TreeNode(2), right=TreeNode(5)
-print(bst)
-print(bst.left)
+# bst = TreeNode(val=4, left=TreeNode(val=3, left=TreeNode(2)), right=TreeNode(val=6, left=TreeNode(5), right=TreeNode(7)))
+#
+# bfs(bst)
+
+# insert(bst, 2)
+# # , left=TreeNode(2), right=TreeNode(5)
+# print(bst)
+# print(bst.left)

@@ -1,11 +1,37 @@
+from collections import deque
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-
     def __str__(self):
-        return str(self.val) + ' ' + str(self.left if self.left else '') + str(self.right if self.right else '')
+        outlist = []
+        queue = deque()
+        queue.append(self)
+
+        level = 0
+        while len(queue) > 0:
+            for i in range(len(queue)):
+                curr = queue.popleft()
+                outlist.append(str(curr.val) + ' ') if curr != 'null' else outlist.append('null ')
+                if curr != 'null':
+                    if curr.left:
+                        queue.append(curr.left)
+                    else:
+                        queue.append('null')
+                    if curr.right:
+                        queue.append(curr.right)
+                    else:
+                        queue.append('null')
+
+            outlist.append('\n')
+            level += 1
+
+        return '\n'.join(''.join(outlist).split('\n')[:-2])
+
+
+### A BST of n levels has (2^n)-1 values filled either with a value or null
 
 
 ### Search, insert, minValue, and remove
@@ -86,7 +112,7 @@ def postorder(root):
 
 ### BFS
 
-from collections import deque
+
 
 def bfs(root):
     queue = deque()
@@ -96,14 +122,15 @@ def bfs(root):
 
     level = 0
     while len(queue) > 0:
-        print("level: ", level)
+        #print("level: ", level)
         for i in range(len(queue)):
             curr = queue.popleft()
-            print(curr.val)
+            print(curr.val,' ', end='')
             if curr.left:
                 queue.append(curr.left)
             if curr.right:
                 queue.append(curr.right)
+        print()
         level += 1
 
 
@@ -111,8 +138,12 @@ def bfs(root):
 
 
 ### --------
-tn = TreeNode(4, TreeNode(3, TreeNode(2)), TreeNode(6, TreeNode(5), TreeNode(7)))
+#tn = TreeNode(4, TreeNode(3, TreeNode(2)), TreeNode(6, TreeNode(5), TreeNode(7)))
+bst = TreeNode(val=4, left=TreeNode(val=3, left=TreeNode(2)), right=TreeNode(val=6, left=TreeNode(5), right=TreeNode(7)))
 
+#bfs(bst)
+
+print(bst)
 
 # print("INORDER\n")
 # inorder(tn)
@@ -120,5 +151,5 @@ tn = TreeNode(4, TreeNode(3, TreeNode(2)), TreeNode(6, TreeNode(5), TreeNode(7))
 # preorder(tn)
 # print("POSTORDER\n")
 # postorder(tn)
-print("BFS\n")
-bfs(tn)
+# print("BFS\n")
+# bfs(tn)
