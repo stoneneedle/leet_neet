@@ -10,6 +10,7 @@ class ListNode:
             cur = cur.next
         return out[:-2]
 
+
 class SinglyLinkedList:
     def __init__(self, from_list=[]):
         # Dummy node
