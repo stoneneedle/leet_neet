@@ -11,6 +11,7 @@ class ListNode:
             cur = cur.next
         return out[:-3]
 
+
 # Implementation for Doubly Linked List
 class DoublyLinkedList:
     def __init__(self, _list=[]):
